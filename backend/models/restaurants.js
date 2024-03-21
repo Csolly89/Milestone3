@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Restaurants.init({
     rest_id:{
-      type:DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    }, 
     location:{
       type: DataTypes.STRING,
       allowNull: false

@@ -10,6 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
+
 // ROOT
 app.get('/', (req, res) => {
     res.status(200).json({
@@ -18,8 +19,11 @@ app.get('/', (req, res) => {
 })
 
 //controllers
+const usersController = require("./controllers/users_controller")
+app.use('/users', usersController)
 
-
+const reservationController = require("./controllers/reservations_controller")
+app.use('/reservations', reservationController)
 
 
 // LISTEN
