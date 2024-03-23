@@ -2,7 +2,7 @@ import { ShoppingCartIcon} from "@heroicons/react/24/solid"
 
 const navLinks = [
     {
-        title: "Menu",
+        title: "Food",
         path: "/menu",
     },
     {
