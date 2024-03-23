@@ -16,9 +16,7 @@ backend/package-lock.json
 /build
 
 # misc
-*.env*
-frontend/.env
-backend/.env
+.env
 .DS_Store
 .env.local
 .env.development.local
