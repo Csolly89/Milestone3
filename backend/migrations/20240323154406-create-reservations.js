@@ -14,10 +14,14 @@ module.exports = {
         allowNull: false
       },
       time: {
-        type: Sequelize.DATE,
+        type: Sequelize.TIME,
         allowNull: false
       },
       user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      rest_id: {
         type: Sequelize.INTEGER,
         allowNull: false
       }

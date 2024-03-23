@@ -25,6 +25,9 @@ app.use('/users', usersController)
 const reservationController = require("./controllers/reservations_controller")
 app.use('/reservations', reservationController)
 
+const restaurantsController = require("./controllers/restaurants_contoller")
+app.use('/restaurants', restaurantsController)
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {

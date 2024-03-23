@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Reservations}) {
+    static associate({ Reservations }) {
       // define association here
       Users.hasMany(Reservations,{
         foreignKey: 'user_id',
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    User_id:{
+    user_id:{
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
