@@ -1,6 +1,32 @@
 const users = require('express').Router()
 const db = require('../models')
+const { createToken } = require('../utils/authUtils')
 const { Users } = db
+
+users.post('/login', async(req,res) => {
+    //this is the user login function
+    try {
+        const foundUser = await Users.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        if (!foundUser)
+            return res.status(404).send({error: 'User not found'});
+
+        if (!foundUser.checkPassword(req.body.passwrd))
+            return res.status(400).send({error: 'Wrong passowrd'});
+
+        const accessToken = createToken(foundUser.email, foundUser.id);
+        
+        return res.status(200).send({
+            user: foundUser,
+            accessToken
+        })
+    } catch(e){
+        res.status(500).send({errors: e.message})
+    }
+})
 
 //INDEX
 users.get('/', async (req, res) => {
