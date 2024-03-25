@@ -1,9 +1,10 @@
 const reservations = require('express').Router()
 const db = require('../models')
+const { verifyAccessToken } = require('../utils/authUtils')
 const { Reservations } = db
 
 //INDEX
-reservations.get('/', async (req, res) => {
+reservations.get('/', verifyAccessToken, async (req, res) => {
     try {
         const foundReservations = await Reservations.findAll()
         res.status(200).json({foundReservations})
@@ -13,7 +14,7 @@ reservations.get('/', async (req, res) => {
 })
 
 //SHOW
-reservations.get('/:id', async (req, res) => {
+reservations.get('/:id', verifyAccessToken, async (req, res) => {
     try {
         const foundReservations = await Reservations.findOne({
             where: { res_id: req.params.id }
@@ -25,7 +26,7 @@ reservations.get('/:id', async (req, res) => {
 })
 
 //CREATE
-reservations.post('/', async (req, res) => {
+reservations.post('/', verifyAccessToken, async (req, res) => {
     try {
         const newRes = await Reservations.create(req.body)
         res.status(200).json({
@@ -38,7 +39,7 @@ reservations.post('/', async (req, res) => {
 })
 
 //Update
-reservations.put('/:id', async (req, res) => {
+reservations.put('/:id', verifyAccessToken, async (req, res) => {
     try {
         const updateReservation = await Reservations.update(req.body, {
             where: {
@@ -54,7 +55,7 @@ reservations.put('/:id', async (req, res) => {
 })
 
 //DELETE
-reservations.delete('/:id', async (req, res) => {
+reservations.delete('/:id', verifyAccessToken, async (req, res) => {
     try {
         const deleteRes = await Reservations.destroy({
             where: {
