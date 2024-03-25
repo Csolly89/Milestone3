@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 'use strict';
 const {
   Model
@@ -48,10 +50,27 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     } 
   }, {
+    hooks: {
+      async beforeCreate(newUserData){
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      async beforeUpdate(updateUserData){
+        updateUserData.password = await bcrypt.hash(
+          updateUserData.password, 10
+        );
+        return updateUserData
+      }
+    },
     sequelize,
     modelName: 'Users',
     tableName: 'users',
     timestamps: false
   });
+
+  Users.prototype.checkPassword = function(loginPw){
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+
   return Users;
 };
