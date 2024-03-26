@@ -1,8 +1,8 @@
-import { ShoppingCartIcon} from "@heroicons/react/24/solid"
+// import { ShoppingCartIcon} from "@heroicons/react/24/solid"
 
 const navLinks = [
     {
-        title: "Food",
+        title: "Menu",
         path: "/menu",
     },
     {
@@ -25,10 +25,10 @@ const navLinks = [
         title: "Login",
         path: "/login",
     },
-    {
-        title: <ShoppingCartIcon className="h-5 w-5" />,
-        path: "/curbside",
-    },
+    // {
+    //     title: <ShoppingCartIcon className="h-8 w-5" />,
+    //     path: "/curbside",
+    // },
 ]
 
 export default navLinks
