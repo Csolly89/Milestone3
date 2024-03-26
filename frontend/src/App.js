@@ -13,7 +13,7 @@ import Logreg from "./Components/Login";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div data-theme="light" className="App">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
