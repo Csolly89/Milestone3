@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Login = (props) => {
 	const [user, setUser] = useState("");
 	const [pass, setPass] = useState("");
+
+	const [users, setUsers] = useState([])
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await fetch(`http://localhost:5001/users`)
+			const resData = await response.json()
+			console.log(resData.foundUsers)
+			setUsers(resData.foundUsers)
+		}
+		fetchData()
+	}, [])
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
