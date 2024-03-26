@@ -5,8 +5,8 @@ const salads = [
         price: 14.99
     },
     {
-        name: "BBQ Chicken Salad",
-        description: "Grilled barbecue chicken breast served atop a blend of romaine and iceberg lettuce, diced avocado, roasted corn, black beans, and ranch dressing.",
+        name: "Strawberry Feta Salad",
+        description: "Refreshing flavors of our Strawberry Feta Salad, a delightful blend of crisp mixed greens, juicy ripe strawberries, and tangy feta cheese crumbles. Topped with crunchy candied walnuts and drizzled with a balsamic vinaigrette dressing.",
         price: 12.99
     },
     {
