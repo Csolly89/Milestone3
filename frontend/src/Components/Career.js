@@ -53,7 +53,8 @@ function Career() {
     <div class="relative max-w-md mx-auto mt-8 md:mt-16">
         <div class="overflow-hidden bg-white rounded-md shadow-md">
             <div class="px-4 py-6 sm:px-8 sm:py-7">
-                <form >
+                <form>
+                    {/*  */}
                     <div class="space-y-5">
                         <div>
                             <label for="" class="text-base font-medium text-gray-900"> First name </label>
