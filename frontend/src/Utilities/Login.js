@@ -17,7 +17,6 @@ const Login = (props) => {
 		  if (email === data[i].email) {
 			if (pass === data[i].password) {
 			  console.log(`Welcome ${data[i].first_name}`)
-			  //navigate(`store/${storeId}/inventory`, { state: storesData[i] });
 			  return;
 			}
 			else{
