@@ -31,16 +31,16 @@ const hoursOfOperation = {
 
 function Locations() {
     return (
-        <div>
-            <div>
-            {Object.entries(hoursOfOperation).map(([day, time]) => (
-        <div key={day}>
-            <h2>{day}</h2>
-            <p>Open: {time.openingTime}</p>
-            <p>Closing: {time.closingTime}</p>
-        </div>
-        ))}
-    </div>
+        <div className="card w-96 bg-neutral text-neutral-content flex items-center justify-center my-20 mx-auto">
+            <div className="card-body items-center text-center ">
+                {Object.entries(hoursOfOperation).map(([day, time]) => (
+                <div key={day}>
+                    <h2 className="card-title">{day}</h2>
+                    <p>Open: {time.openingTime}</p>
+                    <p>Closing: {time.closingTime}</p>
+                </div>
+                ))}
+            </div>
         </div>
     );
 }
