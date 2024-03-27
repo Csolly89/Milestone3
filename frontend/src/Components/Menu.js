@@ -45,7 +45,7 @@ function Menu() {
                 </div>
                 {/* specials menu */}  
                 <div className="">
-                    <div className="flex-row mb-2 card w-full bg-base-100 shadow-xl mt-4 md:mt-8 ">
+                    <div className="flex-row mb-2 card w-full bg-base-100 shadow-xl mt-4 md:mt-8 justify-center">
                         <TabButton selectTab={() => sHandleTabChange('monday')} active={sTab === 'Monday'}>Monday</TabButton>
                         <TabButton selectTab={() => sHandleTabChange('tuesday')} active={sTab === 'Tuesday'}>Tuesday</TabButton>
                         <TabButton selectTab={() => sHandleTabChange('wednesday')} active={sTab === 'Wednesday'}>Wednesday</TabButton>
@@ -54,7 +54,7 @@ function Menu() {
                         <TabButton selectTab={() => sHandleTabChange('saturday')} active={sTab === 'Saturday'}>Saturday</TabButton>
                     </div>
                     {/* specials content display */}
-                    <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <div className="card w-96 bg-base-100 shadow-xl image-full mx-auto">
                         <div className="card-body">
                             <h2 className="card-title">{}</h2>
                             {SpecData.find((s) => s.id === sTab).content}
