@@ -1,7 +1,36 @@
 import React from "react"
 import Ribs from "../img/ribs.jpg"
+import { useState } from "react";
 
 function Register(props) {
+    const [user, setUser] = useState({
+		user_id: '',
+		first_name: '',
+		last_name: '',
+		email: '',
+        phone_number: '',
+		password: '',
+        zipcode: ''
+
+	})
+    
+    
+    
+    async function handleSubmit(e) {
+		// e.preventDefault()
+
+		// await fetch(`${process.env.REACT_APP_SERVER_URL}users`, {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify(user)
+		// })
+
+		// history.push('/places')
+	}
+    
+    
     return ( 
         <>
         <section class="bg-white">
@@ -11,15 +40,14 @@ function Register(props) {
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
                         <p>Already have an account? <button onClick={() => props.onFormSwitch('login')} classname="bg-blue-700 px-1"> Login!</button></p>
 
-                        <form action="#" method="POST" class="mt-8">
+                        <form name="myForm" action="#" onSubmit={handleSubmit} class="mt-8">
                             <div class="space-y-5">
                                 <div>
                                     <label for="" class="text-base font-medium text-gray-900"> Full Name </label>
                                     <div class="mt-2.5">
                                         <input
                                             type="text"
-                                            name=""
-                                            id=""
+                                            value={user}
                                             placeholder="Enter your full name"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                         />
