@@ -1,14 +1,15 @@
 // DEPENDENCIES
+require('dotenv').config()
 const express = require('express')
 const app = express()
-const { Sequelize } = require('sequelize')
+const cors = require('cors')
+const axios = require('axios')
 
 
 // CONFIGURATION / MIDDLEWARE
-require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
+app.use(cors())
 
 
 // ROOT

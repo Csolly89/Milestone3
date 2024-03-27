@@ -53,7 +53,8 @@ function Career() {
     <div class="relative max-w-md mx-auto mt-8 md:mt-16">
         <div class="overflow-hidden bg-white rounded-md shadow-md">
             <div class="px-4 py-6 sm:px-8 sm:py-7">
-                <form >
+                <form>
+                    {/*  */}
                     <div class="space-y-5">
                         <div>
                             <label for="" class="text-base font-medium text-gray-900"> First name </label>
@@ -63,7 +64,7 @@ function Career() {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
                                 </div>
-
+                                {/*  */}
                                 <input
                                     type="text"
                                     name=""
