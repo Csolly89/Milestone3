@@ -6,11 +6,7 @@ const navLinks = [
         path: "/menu",
     },
     {
-        title: "Specials",
-        path: "/specials",
-    },
-    {
-        title: "Locations",
+        title: "Hours ",
         path: "/locations",
     },
     {

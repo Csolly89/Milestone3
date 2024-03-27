@@ -61,7 +61,7 @@ function Reservation() {
                     <div class="px-4 py-5 sm:p-6">
                         <div class="flex items-center">
                             <label> Date:
-                              <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
                             </label>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ function Reservation() {
                     <div class="px-4 py-5 sm:p-6">
                         <div class="flex items-center">
                         <label> Time:
-                          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
+                            <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
                         </label>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ function Reservation() {
                 <input type="text" value={res_Id} onChange={(e) => setResId(e.target.value)} required/>
                 </label>
             </div>
-            <button type="submit" href="#" title="" class="inline-flex items-center justify-center w-full px-12 py-4 mt-6 font-semibold text-white transition-all duration-200 rounded-md bg-gradient-to-r from-fuchsia-600 to-blue-600 hover:opacity-80 focus:opacity-80" role="button"> Submit</button>
+            <button type="submit" href="#" title="" class="inline-flex items-center justify-center w-full px-12 py-4 mt-6 font-semibold text-white transition-all duration-200 rounded-md bg-gradient-to-r from-fuchsia-600 to-blue-600 hover:opacity-80 focus:opacity-80"> Submit</button>
         </div>
     </div>
 </section>

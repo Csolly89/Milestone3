@@ -56,7 +56,7 @@ function Register(props) {
                                     <input type="checkbox" name="agree" id="agree" class="w-5 h-5 text-blue-600 bg-white border-gray-200 rounded" />
 
                                     <label for="agree" class="ml-3 text-sm font-medium text-gray-500">
-                                        I agree to Postcraft’s <a href="#" title="" class="text-blue-600 hover:text-blue-700 hover:underline">Terms of Service</a> and <a href="#" title="" class="text-blue-600 hover:text-blue-700 hover:underline">Privacy Policy</a>
+                                        I agree to Sizzle House's <button href="#" title="" class="text-blue-600 hover:text-blue-700 hover:underline">Terms of Service</button> and <button href="#" title="" class="text-blue-600 hover:text-blue-700 hover:underline">Privacy Policy</button>
                                     </label>
                                 </div>
 
