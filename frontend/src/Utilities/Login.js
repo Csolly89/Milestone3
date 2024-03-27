@@ -12,16 +12,6 @@ const Login = (props) => {
         data = resData.foundUsers
     }
 
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		const response = await fetch(`http://localhost:5001/users/${email}`)
-	// 		const resData = await response.json()
-    //         data = resData.foundUsers
-    //         console.log(data)
-	// 	}
-	// 	fetchData()
-	// }, [email, pass])
-
 	function verification() {
 		for (let i = 0; i < data.length; i++) {
 		  if (email === data[i].email) {
