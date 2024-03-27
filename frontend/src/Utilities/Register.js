@@ -1,36 +1,72 @@
 import React from "react"
 import Ribs from "../img/ribs.jpg"
+// need first name, last name, phone number, zipcode
 
 function Register(props) {
     return ( 
         <>
         <section class="bg-white">
             <div class="grid grid-cols-1 lg:grid-cols-2">
-                <div class="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+                <div class="flex items-center justify-center px-4 py-5 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
                     <div class="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
                         <p>Already have an account? <button onClick={() => props.onFormSwitch('login')} classname="bg-blue-700 px-1"> Login!</button></p>
 
-                        <form action="#" method="POST" class="mt-8">
+                        <form action="#" method="POST" class="mt-3">
                             <div class="space-y-5">
                                 <div>
-                                    <label for="" class="text-base font-medium text-gray-900"> Full Name </label>
+                                    <label for="" class="text-base font-medium text-gray-900"> First Name </label>
                                     <div class="mt-2.5">
                                         <input
                                             type="text"
                                             name=""
                                             id=""
-                                            placeholder="Enter your full name"
+                                            placeholder="Enter your First name"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                         />
                                     </div>
                                 </div>
-
+                                <div>
+                                    <label for="" class="text-base font-medium text-gray-900"> Last Name </label>
+                                    <div class="mt-2.5">
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Enter your Last name"
+                                            class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="" class="text-base font-medium text-gray-900"> Phone Number </label>
+                                    <div class="mt-2.5">
+                                        <input
+                                            type="string"
+                                            name=""
+                                            id=""
+                                            placeholder="Phonenumber"
+                                            class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="" class="text-base font-medium text-gray-900"> Zipcode </label>
+                                    <div class="mt-2.5">
+                                        <input
+                                            type="integer"
+                                            name=""
+                                            id=""
+                                            placeholder="Zipcode"
+                                            class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                        />
+                                    </div>
+                                </div>
                                 <div>
                                     <label for="" class="text-base font-medium text-gray-900"> Email address </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="email"
+                                            type="text"
                                             name=""
                                             id=""
                                             placeholder="Enter email to get started"

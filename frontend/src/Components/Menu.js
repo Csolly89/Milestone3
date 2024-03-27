@@ -45,7 +45,7 @@ function Menu() {
                 </div>
                 {/* specials menu */}  
                 <div className="">
-                    <div className="flex-row mb-2 card w-full bg-base-100 shadow-xl mt-4 md:mt-8 justify-center">
+                    <div className="flex-row mb-2 card w-full bg-base-100 shadow-xl mt-4 md:mt-8 justify-center md:gap-4 lg:gap-6">
                         <TabButton selectTab={() => sHandleTabChange('monday')} active={sTab === 'Monday'}>Monday</TabButton>
                         <TabButton selectTab={() => sHandleTabChange('tuesday')} active={sTab === 'Tuesday'}>Tuesday</TabButton>
                         <TabButton selectTab={() => sHandleTabChange('wednesday')} active={sTab === 'Wednesday'}>Wednesday</TabButton>
