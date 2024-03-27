@@ -16,7 +16,22 @@ users.get('/', async (req, res) => {
 users.get('/:id', async (req, res) => {
     try {
         const foundUsers = await Users.findOne({
-            where: { user_id: req.params.id }
+            where: {
+                 user_id: req.params.id 
+                }
+        })
+        res.status(200).json(foundUsers)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+users.get('/:email', async (req, res) => {
+    let userEmail = String(req.params.email)
+
+    try {
+        const foundUsers = await Users.findAll({
+            where: { email: `${userEmail}` }
         })
         res.status(200).json(foundUsers)
     } catch (error) {
