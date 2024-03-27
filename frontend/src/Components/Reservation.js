@@ -79,6 +79,7 @@ function Reservation() {
                 <label className="hidden"> User ID:
                 <input type="text" value={user_Id} onChange={(e) => setUserId(e.target.value)} required/>
                 </label>
+                {/* make hardcoded to id 1 and disabled */}
                 <br />
                 <label className="hidden">Reservation ID:
                 <input type="text" value={res_Id} onChange={(e) => setResId(e.target.value)} required/>

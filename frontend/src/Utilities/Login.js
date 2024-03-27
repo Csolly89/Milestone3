@@ -6,15 +6,15 @@ const Login = (props) => {
 
 	const [users, setUsers] = useState([])
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch(`http://localhost:5001/users`)
-			const resData = await response.json()
-			console.log(resData.foundUsers)
-			setUsers(resData.foundUsers)
-		}
-		fetchData()
-	}, [])
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		const response = await fetch(`http://localhost:5001/users`)
+	// 		const resData = await response.json()
+	// 		console.log(resData.foundUsers)
+	// 		setUsers(resData.foundUsers)
+	// 	}
+	// 	fetchData()
+	// }, [])
 
 
 	const handleSubmit = (e) => {
