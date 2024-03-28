@@ -16,7 +16,9 @@ users.get('/', async (req, res) => {
 users.get('/:id', async (req, res) => {
     try {
         const foundUsers = await Users.findOne({
-            where: { user_id: req.params.id }
+            where: {
+                 user_id: req.params.id 
+                }
         })
         res.status(200).json(foundUsers)
     } catch (error) {
@@ -24,12 +26,15 @@ users.get('/:id', async (req, res) => {
     }
 })
 
+
 //CREATE
 users.post('/', async (req, res) => {
     try {
+        console.log(req.body)
         const newUser = await Users.create(req.body)
+        res.json(users)
         res.status(200).json({
-            message: 'Successfully inserted a new store',
+            message: 'Successfully inserted a new user',
             data: newUser
         })
     } catch(err) {

@@ -1,8 +1,39 @@
 import React from "react"
 import Ribs from "../img/ribs.jpg"
+import { useState } from "react"
+
 // need first name, last name, phone number, zipcode
 
 function Register(props) {
+
+    const [user, setUser] = useState({
+        first_name: '',
+		last_name: '',
+		email: '',
+        phone_number: '',
+		password: '',
+        zipcode: ''
+	})
+    
+    
+    
+    async function handleSubmit(e) {
+		e.preventDefault()
+
+        console.log(user)
+
+		await fetch(`http://localhost:5001/users`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*"
+			},
+			body: JSON.stringify(user)
+		})
+        console.log(user)
+	}
+    
+    
     return ( 
         <>
         <section class="bg-white">
@@ -12,17 +43,18 @@ function Register(props) {
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
                         <p>Already have an account? <button onClick={() => props.onFormSwitch('login')} classname="bg-blue-700 px-1"> Login!</button></p>
 
-                        <form action="#" method="POST" class="mt-3">
+                        <form name="myForm" action="#" onSubmit={handleSubmit} class="mt-3">
                             <div class="space-y-5">
                                 <div>
                                     <label for="" class="text-base font-medium text-gray-900"> First Name </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="text"
-                                            name=""
-                                            id=""
+                                            type="first_name"
+                                            value={user.first_name}
+                                            onChange={(e) => setUser({ ...user, first_name: e.target.value})}
                                             placeholder="Enter your First name"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -30,11 +62,12 @@ function Register(props) {
                                     <label for="" class="text-base font-medium text-gray-900"> Last Name </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="text"
-                                            name=""
-                                            id=""
+                                            type="last_name"
+                                            value={user.last_name}
+                                            onChange={(e) => setUser({ ...user, last_name: e.target.value})}
                                             placeholder="Enter your Last name"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -42,11 +75,12 @@ function Register(props) {
                                     <label for="" class="text-base font-medium text-gray-900"> Phone Number </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="string"
-                                            name=""
-                                            id=""
+                                            type="phone_number"
+                                            value={user.phone_number}
+                                            onChange={(e) => setUser({ ...user, phone_number: e.target.value})}
                                             placeholder="Phonenumber"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -54,11 +88,12 @@ function Register(props) {
                                     <label for="" class="text-base font-medium text-gray-900"> Zipcode </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="integer"
-                                            name=""
-                                            id=""
+                                            type="zipcode"
+                                            value={user.zipcode}
+                                            onChange={(e) => setUser({ ...user, zipcode: e.target.value})}
                                             placeholder="Zipcode"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -66,11 +101,12 @@ function Register(props) {
                                     <label for="" class="text-base font-medium text-gray-900"> Email address </label>
                                     <div class="mt-2.5">
                                         <input
-                                            type="text"
-                                            name=""
-                                            id=""
+                                            type="email"
+                                            value={user.email}
+                                            onChange={(e) => setUser({ ...user, email: e.target.value})}
                                             placeholder="Enter email to get started"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -80,10 +116,11 @@ function Register(props) {
                                     <div class="mt-2.5">
                                         <input
                                             type="password"
-                                            name=""
-                                            id=""
+                                            value={user.password}
+                                            onChange={(e) => setUser({ ...user, password: e.target.value})}
                                             placeholder="Enter your password"
                                             class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            required
                                         />
                                     </div>
                                 </div>
