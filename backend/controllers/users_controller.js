@@ -6,9 +6,9 @@ const { Users } = db
 users.get('/', async (req, res) => {
     try {
         const foundUsers = await Users.findAll()
-        res.status(200).json({foundUsers})
+        return res.status(200).send({foundUsers})
     } catch (error) {
-        res.status(500).json(error)
+        return res.status(500).send(error)
     }
 })
 
@@ -20,9 +20,9 @@ users.get('/:id', async (req, res) => {
                  user_id: req.params.id 
                 }
         })
-        res.status(200).json(foundUsers)
+        res.status(200).send(foundUsers)
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).send(error)
     }
 })
 
@@ -30,15 +30,13 @@ users.get('/:id', async (req, res) => {
 //CREATE
 users.post('/', async (req, res) => {
     try {
-        console.log(req.body)
         const newUser = await Users.create(req.body)
-        res.json(users)
-        res.status(200).json({
+        res.status(200).send({
             message: 'Successfully inserted a new user',
             data: newUser
         })
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).send(err)
     }
 })
 
@@ -50,11 +48,11 @@ users.put('/:id', async (req, res) => {
                 user_id: req.params.id
             }
         })
-        res.status(200).json({
+        res.status(200).send({
             message: `Successfully updates ${updateUser} user(s)`
         })
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).send(err)
     }
 })
 
@@ -66,11 +64,11 @@ users.delete('/:id', async (req, res) => {
                 user_id: req.params.id
             }
         })
-        res.status(500).json({
+        res.status(200).send({
             message: `Successfully deleted ${deleteUser} user(s)`
         })
     } catch(err) {
-        res.status(200).json(err)
+        res.status(500).send(err)
     }
 })
 

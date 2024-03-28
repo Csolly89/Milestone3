@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CurrentUserProvider from './Context/userContext';
 
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar"
