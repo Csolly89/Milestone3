@@ -26,25 +26,15 @@ users.get('/:id', async (req, res) => {
     }
 })
 
-users.get('/:email', async (req, res) => {
-    let userEmail = String(req.params.email)
-
-    try {
-        const foundUsers = await Users.findAll({
-            where: { email: `${userEmail}` }
-        })
-        res.status(200).json(foundUsers)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
 
 //CREATE
 users.post('/', async (req, res) => {
     try {
+        console.log(req.body)
         const newUser = await Users.create(req.body)
+        res.json(users)
         res.status(200).json({
-            message: 'Successfully inserted a new store',
+            message: 'Successfully inserted a new user',
             data: newUser
         })
     } catch(err) {
