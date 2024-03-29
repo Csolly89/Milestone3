@@ -27,11 +27,11 @@ function Menu() {
                 <div className="flex w-min h-100 py-12 my-10 mx-auto">
                     {/* tabs for different menu sections */}
                     <div className="grid w-15 pt-12 pb-12 card bg-base-300 rounded-box place-items-center">
-                        <TabButton selectTab={() => handleTabChange('apps')} active={tab === 'apps'}>Appetizers</TabButton>
-                        <TabButton selectTab={() => handleTabChange('salads')} active={tab === 'salads'}>Salads</TabButton>
-                        <TabButton selectTab={() => handleTabChange('entrees')} active={tab === 'entrees'}>Entrees</TabButton>
-                        <TabButton selectTab={() => handleTabChange('sides')} active={tab === 'sides'}>Sides</TabButton>
-                        <TabButton selectTab={() => handleTabChange('deserts')} active={tab === 'deserts'}>Deserts</TabButton>
+                        <TabButton defaultValue="apps" selectTab={() => handleTabChange('apps')} active={tab === 'apps'}>Appetizers</TabButton>
+                        <TabButton defaultValue="salads" selectTab={() => handleTabChange('salads')} active={tab === 'salads'}>Salads</TabButton>
+                        <TabButton defaultValue="entrees" selectTab={() => handleTabChange('entrees')} active={tab === 'entrees'}>Entrees</TabButton>
+                        <TabButton defaultValue="sides" selectTab={() => handleTabChange('sides')} active={tab === 'sides'}>Sides</TabButton>
+                        <TabButton defaultValue="deserts"  selectTab={() => handleTabChange('deserts')} active={tab === 'deserts'}>Deserts</TabButton>
                     </div>
                     <div className="divider divider-horizontal divider-error">|</div>
                     {/* card for menu items */}
@@ -46,12 +46,12 @@ function Menu() {
                 {/* specials menu */}  
                 <div className="">
                     <div className="flex-row mb-2 card w-full bg-base-100 shadow-xl mt-4 md:mt-8 justify-center md:gap-4 lg:gap-6">
-                        <TabButton selectTab={() => sHandleTabChange('monday')} active={sTab === 'Monday'}>Monday</TabButton>
-                        <TabButton selectTab={() => sHandleTabChange('tuesday')} active={sTab === 'Tuesday'}>Tuesday</TabButton>
-                        <TabButton selectTab={() => sHandleTabChange('wednesday')} active={sTab === 'Wednesday'}>Wednesday</TabButton>
-                        <TabButton selectTab={() => sHandleTabChange('thursday')} active={sTab === 'Thursday'}>Thursday</TabButton>
-                        <TabButton selectTab={() => sHandleTabChange('friday')} active={sTab === 'Friday'}>Friday</TabButton>
-                        <TabButton selectTab={() => sHandleTabChange('saturday')} active={sTab === 'Saturday'}>Saturday</TabButton>
+                        <TabButton defaultValue="monday" selectTab={() => sHandleTabChange('monday')} active={sTab === 'Monday'}>Monday</TabButton>
+                        <TabButton defaultValue="tuesday" selectTab={() => sHandleTabChange('tuesday')} active={sTab === 'Tuesday'}>Tuesday</TabButton>
+                        <TabButton defaultValue="wednesday" selectTab={() => sHandleTabChange('wednesday')} active={sTab === 'Wednesday'}>Wednesday</TabButton>
+                        <TabButton defaultValue="thursday" selectTab={() => sHandleTabChange('thursday')} active={sTab === 'Thursday'}>Thursday</TabButton>
+                        <TabButton defaultValue="friday" selectTab={() => sHandleTabChange('friday')} active={sTab === 'Friday'}>Friday</TabButton>
+                        <TabButton defaultValue="saturday" selectTab={() => sHandleTabChange('saturday')} active={sTab === 'Saturday'}>Saturday</TabButton>
                     </div>
                     {/* specials content display */}
                     <div className="card w-96 bg-base-100 shadow-xl image-full mx-auto">
@@ -67,4 +67,3 @@ function Menu() {
 }
 
 export default Menu;
-
