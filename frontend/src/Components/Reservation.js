@@ -39,6 +39,7 @@ function Reservation() {
             .then(response => {
                 //redirect home after saving the reservation
                 window.location.href = '/'
+            console.log("Reservation confirmed!!")
             })
         // Reset form fields
         setDate('');

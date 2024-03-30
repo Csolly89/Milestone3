@@ -43,7 +43,7 @@ function Locations() {
                     </div>
                     <div className="grid grid-cols-1 mt-8 md:mt-20 gap-y-6 md:grid-cols-2 gap-x-10">
                         <div>
-                            <img className="w-full mx-auto sm:max-w-xs" src={Steak} alt="Tomahawk steak" />
+                            <img className="w-full mx-auto sm:max-w-xs h-full object-contain" src={Steak} alt="Tomahawk steak" />
                         </div>
                         <div>
                             <div className="card w-96 bg-neutral text-neutral-content flex sm:mx-auto">

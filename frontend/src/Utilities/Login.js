@@ -13,13 +13,13 @@ const Login = (props) => {
                     //see if the username and password match one of the users
                     const foundUser = userList.find(singleUser => singleUser.email.trim().toLowerCase() == user.trim().toLowerCase());
                     if (!foundUser) {
-                        alert('User not found');
+                        alert('Invalid User/Password');
                         return;
                     }
 
                     //now see if the password match
                     if (foundUser.password !== pass) {
-                        alert('Invalid password');
+                        alert('Invalid User/Password');
                         return;
                     }
                     //save the user to local storage
@@ -40,7 +40,8 @@ const Login = (props) => {
             alert('No email or password');
             return;
         }
-        await fetchUsersAndVerifyUser();
+        await fetchUsersAndVerifyUser()
+        console.log("Welcome to the SizzleHouse")
 
     };
 

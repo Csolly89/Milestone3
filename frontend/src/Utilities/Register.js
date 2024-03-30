@@ -33,7 +33,8 @@ function Register(props) {
                 //we got the user save it to local storage
                 localStorage.setItem('currentUser', JSON.stringify(response.data));
                 //redirect to home
-                window.location.href = '/'
+                window.location.href = '/login'
+                console.log("New user created!!")
             })
     }
 
