@@ -1,4 +1,3 @@
-// user_id, res_id, date, time table rows/id's
 import React, { useState, useContext } from "react";
 
 function Reservation() {
@@ -19,7 +18,7 @@ function Reservation() {
   // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        debugger;
+        // debugger;
 
         //create the user reservation
         const reservationData = {
@@ -28,7 +27,6 @@ function Reservation() {
             user_id: currentUser.user_id,
             rest_id: 1
         };
-
         fetch(`http://localhost:5000/reservations`, {
 			method: 'POST',
 			headers: {
@@ -42,44 +40,16 @@ function Reservation() {
             //redirect home after saving the reservation
             window.location.href = '/'
         })
-
-        
-        
         // Reset form fields
         setDate('');
         setTime('');
     };
 
     return (
-      // original basic Reservation form
-    //     <div>
-    //     <h2>Would you like to place a Reservation?</h2>
-    //     <form onSubmit={handleSubmit}>
-    //         <label>
-    //         Date:
-    //         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-    //         </label>
-    //         <br />
-    //         <label>
-    //         Time:
-    //         <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
-    //         </label>
-    //         <br />
-    //         <label className="hidden">
-    //         User ID:
-    //         <input type="text" value={user_Id} onChange={(e) => setUserId(e.target.value)} required/>
-    //         </label>
-    //         <br />
-    //         <label className="hidden">
-    //         Reservation ID:
-    //         <input type="text" value={res_Id} onChange={(e) => setResId(e.target.value)} required/>
-    //         </label>
-    //         <button type="submit">Submit</button>
-    //     </form>
-    // </div>
     <>
-    {!currentUser && <section class="py-10 bg-white sm:py-16 lg:py-24">
-        <h2 class="text-3xl font-bold leading-tight text-black sm:text-2xl lg:text-3xl">Please sign in to make a Reservation</h2>
+    {!currentUser && 
+        <section class="py-10 bg-white sm:py-16 lg:py-24">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-2xl lg:text-3xl">Please sign in to make a Reservation</h2>
         </section>}
     {currentUser && 
         <section class="py-10 bg-white sm:py-16 lg:py-24">
