@@ -41,8 +41,10 @@ const Login = (props) => {
             alert('No email or password');
             return;
         }
-        await fetchUsersAndVerifyUser();
-        
+        await fetchUsersAndVerifyUser()
+            .then(
+                console.log("Welcome" + `${user.first_name}`)
+            )
 	};
 
 	return (
